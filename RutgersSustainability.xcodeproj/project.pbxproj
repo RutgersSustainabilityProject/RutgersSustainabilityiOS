@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					A822A00B1E26A0A100CE23B4 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = G3C7HTN75X;
 						ProvisioningStyle = Automatic;
 					};
 					A822A01F1E26A0A200CE23B4 = {
@@ -410,6 +411,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = G3C7HTN75X;
 				INFOPLIST_FILE = RutgersSustainability/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rutgers.RutgersSustainability;
@@ -422,6 +425,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = G3C7HTN75X;
 				INFOPLIST_FILE = RutgersSustainability/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Rutgers.RutgersSustainability;
@@ -503,6 +508,7 @@
 				A822A0361E26A0A200CE23B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A822A0371E26A0A200CE23B4 /* Build configuration list for PBXNativeTarget "RutgersSustainabilityTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +517,7 @@
 				A822A0391E26A0A200CE23B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A822A03A1E26A0A200CE23B4 /* Build configuration list for PBXNativeTarget "RutgersSustainabilityUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +526,7 @@
 				A822A03C1E26A0A200CE23B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
