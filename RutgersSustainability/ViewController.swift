@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var image : UIImage!
+
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -23,13 +25,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func photoTaken(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = false
+     //   print("hello1")
             self.present(imagePicker, animated: true, completion: nil)
-            
+     //   print("hello2")
         }
     }
 
@@ -39,30 +42,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
+ //           self.present(imagePicker, animated: true, completion: nil)
+             self.performSegue(withIdentifier: "PictureTaken", sender: self)
         }
     }
-    
-    @IBAction func saveButtonClicked(_ sender: Any) {
-        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.6)
-        let compressedJPEGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil)
-        saveNotice()
-    }
-    
+
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject: AnyObject]!) {
-        imageView.image = image
+    //    print("hello3")
+        self.image = image
+        imageView.image = self.image
         self.dismiss(animated: true, completion: nil);
+    //   print("hello4")
+       
     }
-    
-    func saveNotice(){
-        let alertController = UIAlertController(title: "Image Saved!", message: "Your picture was successfully saved.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present(alertController, animated: true, completion: nil)
+        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pictureTaken" {
+        print("segue completed")
+        let afterPic = segue.destination as! AfterPictureViewController
+        afterPic.image = self.image!
+        }
     }
-
     
 }
 

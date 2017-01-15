@@ -14,6 +14,7 @@
 		A822A01A1E26A0A200CE23B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A822A0181E26A0A200CE23B4 /* LaunchScreen.storyboard */; };
 		A822A0251E26A0A200CE23B4 /* RutgersSustainabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822A0241E26A0A200CE23B4 /* RutgersSustainabilityTests.swift */; };
 		A822A0301E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822A02F1E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift */; };
+		A84E86591E2AD8C7008476E4 /* AfterPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A822A02B1E26A0A200CE23B4 /* RutgersSustainabilityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RutgersSustainabilityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A822A02F1E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutgersSustainabilityUITests.swift; sourceTree = "<group>"; };
 		A822A0311E26A0A200CE23B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterPictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				A822A00F1E26A0A200CE23B4 /* AppDelegate.swift */,
 				A822A0111E26A0A200CE23B4 /* ViewController.swift */,
+				A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */,
 				A822A0131E26A0A200CE23B4 /* Main.storyboard */,
 				A822A0161E26A0A200CE23B4 /* Assets.xcassets */,
 				A822A0181E26A0A200CE23B4 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			files = (
 				A822A0121E26A0A200CE23B4 /* ViewController.swift in Sources */,
 				A822A0101E26A0A200CE23B4 /* AppDelegate.swift in Sources */,
+				A84E86591E2AD8C7008476E4 /* AfterPictureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

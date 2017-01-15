@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,22 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5eM-Xh-8L4">
-                                <rect key="frame" x="0.0" y="84" width="320" height="359"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOE-c2-yFk">
                                 <rect key="frame" x="117.5" y="516" width="85" height="30"/>
                                 <state key="normal" title="View Photos"/>
                                 <connections>
                                     <action selector="viewPhotoButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFw-1G-5yh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggT-C9-n3n">
-                                <rect key="frame" x="250" y="488" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xxU-K3-cjq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy1-5t-pam">
@@ -46,24 +36,84 @@
                                     <action selector="photoTaken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vtq-Wh-jjb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coe-rR-kzj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="463"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ggT-C9-n3n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="107" id="4cx-0C-WhL"/>
                             <constraint firstItem="aOE-c2-yFk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="247" id="8i3-lT-Qu5"/>
                             <constraint firstItem="Fy1-5t-pam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cj3-sL-C6k"/>
                             <constraint firstItem="aOE-c2-yFk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ONp-K9-OrC"/>
                             <constraint firstItem="Fy1-5t-pam" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="202" id="trZ-sY-c5k"/>
-                            <constraint firstItem="ggT-C9-n3n" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="219" id="wVm-H0-dV9"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="5eM-Xh-8L4" id="UI2-rY-zT7"/>
+                        <outlet property="imageView" destination="coe-rR-kzj" id="cTL-FD-qdz"/>
+                        <segue destination="DZU-vE-jqR" kind="show" identifier="PictureTaken" id="t1K-gf-qCw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.875" y="138.38028169014083"/>
+            <point key="canvasLocation" x="-7.5" y="313.73239436619718"/>
+        </scene>
+        <!--After Picture View Controller-->
+        <scene sceneID="qcd-X3-nxK">
+            <objects>
+                <viewController id="DZU-vE-jqR" customClass="AfterPictureViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bMw-32-bRa"/>
+                        <viewControllerLayoutGuide type="bottom" id="VWk-r0-8yd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RnP-pu-fdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uv-wr-HSa">
+                                <rect key="frame" x="72" y="61" width="176" height="162"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags: (ex: bottle, rapper, food)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-35-xHh">
+                                <rect key="frame" x="51.5" y="245" width="216" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6S-he-7lf">
+                                <rect key="frame" x="116" y="294" width="88" height="30"/>
+                                <state key="normal" title="Send Picture"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHJ-Oo-IDs">
+                                <rect key="frame" x="136" y="328" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="CTv-Uw-dwj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="leading" secondItem="RnP-pu-fdC" secondAttribute="leadingMargin" constant="56" id="EYG-zz-GHe"/>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="centerX" secondItem="RnP-pu-fdC" secondAttribute="centerX" id="FX3-2e-WKe"/>
+                            <constraint firstItem="fHJ-Oo-IDs" firstAttribute="centerY" secondItem="RnP-pu-fdC" secondAttribute="centerY" constant="59" id="Gex-9E-7w2"/>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="centerY" secondItem="RnP-pu-fdC" secondAttribute="centerY" constant="-142" id="LfV-kn-aXE"/>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="top" secondItem="bMw-32-bRa" secondAttribute="bottom" constant="41" id="Vth-na-KsO"/>
+                            <constraint firstItem="r6S-he-7lf" firstAttribute="centerX" secondItem="RnP-pu-fdC" secondAttribute="centerX" id="WKx-Z1-kLY"/>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="centerX" secondItem="1Sl-35-xHh" secondAttribute="centerX" id="Xjn-Mq-8G0"/>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="centerX" secondItem="RnP-pu-fdC" secondAttribute="centerX" id="aKq-ir-cYO"/>
+                            <constraint firstItem="fHJ-Oo-IDs" firstAttribute="centerX" secondItem="RnP-pu-fdC" secondAttribute="centerX" id="atM-K5-t4L"/>
+                            <constraint firstItem="1Sl-35-xHh" firstAttribute="top" secondItem="0uv-wr-HSa" secondAttribute="bottom" constant="22" id="eQF-st-S6r"/>
+                            <constraint firstItem="r6S-he-7lf" firstAttribute="centerY" secondItem="RnP-pu-fdC" secondAttribute="centerY" constant="25" id="nzH-91-tSg"/>
+                            <constraint firstItem="0uv-wr-HSa" firstAttribute="centerY" secondItem="RnP-pu-fdC" secondAttribute="centerY" constant="-142" id="vaA-GA-l0Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="0uv-wr-HSa" id="pHQ-EQ-ihf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bks-Ct-DqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.75" y="-113.02816901408451"/>
         </scene>
     </scenes>
 </document>
