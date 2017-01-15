@@ -47,6 +47,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
+    @IBAction func segueButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "PictureTaken", sender: self)
+    }
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject: AnyObject]!) {
     //    print("hello3")
@@ -54,11 +57,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = self.image
         self.dismiss(animated: true, completion: nil);
     //   print("hello4")
+        self.performSegue(withIdentifier: "PictureTaken", sender: self)
        
     }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "pictureTaken" {
+        if segue.identifier == "PictureTaken" {
         print("segue completed")
         let afterPic = segue.destination as! AfterPictureViewController
         afterPic.image = self.image!

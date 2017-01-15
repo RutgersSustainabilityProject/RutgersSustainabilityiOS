@@ -16,7 +16,7 @@ class AfterPictureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.`
         imageView.image = self.image;
     }
 
