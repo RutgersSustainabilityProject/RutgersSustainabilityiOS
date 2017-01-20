@@ -1,23 +1,19 @@
 //
-//  AfterPictureViewController.swift
+//  PicTableViewController.swift
 //  RutgersSustainability
 //
-//  Created by Vineeth Puli on 1/14/17.
+//  Created by Vineeth Puli on 1/19/17.
 //  Copyright © 2017 Rutgers Sustainability Project. All rights reserved.
 //
 
 import UIKit
 
-class AfterPictureViewController: UIViewController {
+class PicTableViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
-    
-    var image: UIImage!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
-        imageView.image = self.image;
     }
 
     override func didReceiveMemoryWarning() {

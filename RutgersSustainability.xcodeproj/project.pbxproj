@@ -15,6 +15,8 @@
 		A822A0251E26A0A200CE23B4 /* RutgersSustainabilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822A0241E26A0A200CE23B4 /* RutgersSustainabilityTests.swift */; };
 		A822A0301E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822A02F1E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift */; };
 		A84E86591E2AD8C7008476E4 /* AfterPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */; };
+		A88197841E318FF900AC2052 /* PicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88197831E318FF900AC2052 /* PicTableViewController.swift */; };
+		DB8652CF9E576B756ADD3E6B /* Pods_RutgersSustainability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E1A236D181F3B37E01EA9F /* Pods_RutgersSustainability.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		373050CAA522FA284E99B90C /* Pods-RutgersSustainability.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RutgersSustainability.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RutgersSustainability/Pods-RutgersSustainability.debug.xcconfig"; sourceTree = "<group>"; };
+		5C90E19A853714A41DF9334C /* Pods-RutgersSustainability.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RutgersSustainability.release.xcconfig"; path = "Pods/Target Support Files/Pods-RutgersSustainability/Pods-RutgersSustainability.release.xcconfig"; sourceTree = "<group>"; };
+		96E1A236D181F3B37E01EA9F /* Pods_RutgersSustainability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RutgersSustainability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A822A00C1E26A0A200CE23B4 /* RutgersSustainability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RutgersSustainability.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A822A00F1E26A0A200CE23B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A822A0111E26A0A200CE23B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		A822A02F1E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RutgersSustainabilityUITests.swift; sourceTree = "<group>"; };
 		A822A0311E26A0A200CE23B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterPictureViewController.swift; sourceTree = "<group>"; };
+		A88197831E318FF900AC2052 /* PicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB8652CF9E576B756ADD3E6B /* Pods_RutgersSustainability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +90,8 @@
 				A822A0231E26A0A200CE23B4 /* RutgersSustainabilityTests */,
 				A822A02E1E26A0A200CE23B4 /* RutgersSustainabilityUITests */,
 				A822A00D1E26A0A200CE23B4 /* Products */,
+				AB454172262EA6F1E277CC96 /* Pods */,
+				A9C65CD79A61615BC1585243 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +115,7 @@
 				A822A0161E26A0A200CE23B4 /* Assets.xcassets */,
 				A822A0181E26A0A200CE23B4 /* LaunchScreen.storyboard */,
 				A822A01B1E26A0A200CE23B4 /* Info.plist */,
+				A88197831E318FF900AC2052 /* PicTableViewController.swift */,
 			);
 			path = RutgersSustainability;
 			sourceTree = "<group>";
@@ -128,6 +138,23 @@
 			path = RutgersSustainabilityUITests;
 			sourceTree = "<group>";
 		};
+		A9C65CD79A61615BC1585243 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96E1A236D181F3B37E01EA9F /* Pods_RutgersSustainability.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB454172262EA6F1E277CC96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				373050CAA522FA284E99B90C /* Pods-RutgersSustainability.debug.xcconfig */,
+				5C90E19A853714A41DF9334C /* Pods-RutgersSustainability.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A822A0341E26A0A200CE23B4 /* Build configuration list for PBXNativeTarget "RutgersSustainability" */;
 			buildPhases = (
+				F73CCC447AB8EA7722FC5375 /* [CP] Check Pods Manifest.lock */,
 				A822A0081E26A0A100CE23B4 /* Sources */,
 				A822A0091E26A0A100CE23B4 /* Frameworks */,
 				A822A00A1E26A0A100CE23B4 /* Resources */,
+				72F4AF16EC182DF520C61E22 /* [CP] Embed Pods Frameworks */,
+				E7F2ADB1FE216ADC8A906720 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +288,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72F4AF16EC182DF520C61E22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RutgersSustainability/Pods-RutgersSustainability-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7F2ADB1FE216ADC8A906720 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RutgersSustainability/Pods-RutgersSustainability-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F73CCC447AB8EA7722FC5375 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A822A0081E26A0A100CE23B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,6 +343,7 @@
 			files = (
 				A822A0121E26A0A200CE23B4 /* ViewController.swift in Sources */,
 				A822A0101E26A0A200CE23B4 /* AppDelegate.swift in Sources */,
+				A88197841E318FF900AC2052 /* PicTableViewController.swift in Sources */,
 				A84E86591E2AD8C7008476E4 /* AfterPictureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +492,7 @@
 		};
 		A822A0351E26A0A200CE23B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 373050CAA522FA284E99B90C /* Pods-RutgersSustainability.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -427,6 +507,7 @@
 		};
 		A822A0361E26A0A200CE23B4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C90E19A853714A41DF9334C /* Pods-RutgersSustainability.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

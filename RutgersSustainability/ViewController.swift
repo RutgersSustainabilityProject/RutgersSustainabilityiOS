@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AWSS3
+import AWSCognito
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -30,9 +32,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera
             imagePicker.allowsEditing = false
-     //   print("hello1")
             self.present(imagePicker, animated: true, completion: nil)
-     //   print("hello2")
+            
+        }
+        else if
+        UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
         }
     }
 
@@ -42,8 +51,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = true
- //           self.present(imagePicker, animated: true, completion: nil)
-             self.performSegue(withIdentifier: "PictureTaken", sender: self)
+
         }
     }
 
@@ -52,20 +60,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject: AnyObject]!) {
-    //    print("hello3")
         self.image = image
         imageView.image = self.image
-        self.dismiss(animated: true, completion: nil);
-    //   print("hello4")
-        self.performSegue(withIdentifier: "PictureTaken", sender: self)
+        self.dismiss(animated: true, completion: {() -> Void in
+            self.performSegue(withIdentifier: "PictureTaken", sender: nil)
+
+            
+            
+        })
+        
        
     }
-        
+    
+  
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PictureTaken" {
         print("segue completed")
         let afterPic = segue.destination as! AfterPictureViewController
-        afterPic.image = self.image!
+            if (self.image != nil) {
+                afterPic.image = self.image!
+            }
         }
     }
     

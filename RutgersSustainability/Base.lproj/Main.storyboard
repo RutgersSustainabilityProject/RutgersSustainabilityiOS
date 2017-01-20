@@ -27,6 +27,7 @@
                                 <state key="normal" title="View Photos"/>
                                 <connections>
                                     <action selector="viewPhotoButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFw-1G-5yh"/>
+                                    <segue destination="a4f-fQ-IYQ" kind="show" id="qvn-QF-HNH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy1-5t-pam">
@@ -40,14 +41,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="463"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73d-iL-OkI">
-                                <rect key="frame" x="32" y="492" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Segue"/>
-                                <connections>
-                                    <action selector="segueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oFo-gx-153"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,7 +57,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.5" y="313.73239436619718"/>
+            <point key="canvasLocation" x="-41.25" y="317.95774647887322"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jzl-5o-MQO">
+            <objects>
+                <viewController id="a4f-fQ-IYQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Xl-qg-xrc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MfL-XI-a7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="815.49295774647885"/>
         </scene>
         <!--After Picture View Controller-->
         <scene sceneID="qcd-X3-nxK">
@@ -81,8 +88,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uv-wr-HSa">
                                 <rect key="frame" x="72" y="61" width="176" height="162"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags: (ex: bottle, rapper, food)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-35-xHh">
-                                <rect key="frame" x="51.5" y="245" width="216" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags: (ex: bottle, wrapper, food)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-35-xHh">
+                                <rect key="frame" x="46" y="245" width="227" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

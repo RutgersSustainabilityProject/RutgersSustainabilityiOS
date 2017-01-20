@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let credentialsProvider = AWSCognitoCredentialsProvider(
+            regionType: .usEast1,
+            identityPoolId: "us-east-1:36554b1f-7640-4a2f-ab12-d8567abbe228")
+        let configuration = AWSServiceConfiguration(
+            region: .usEast1,
+            credentialsProvider: credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         return true
     }
 
