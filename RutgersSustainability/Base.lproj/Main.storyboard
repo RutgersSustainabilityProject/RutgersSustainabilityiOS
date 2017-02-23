@@ -27,7 +27,6 @@
                                 <state key="normal" title="View Photos"/>
                                 <connections>
                                     <action selector="viewPhotoButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFw-1G-5yh"/>
-                                    <segue destination="a4f-fQ-IYQ" kind="show" id="qvn-QF-HNH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy1-5t-pam">
@@ -53,25 +52,71 @@
                     <connections>
                         <outlet property="imageView" destination="coe-rR-kzj" id="cTL-FD-qdz"/>
                         <segue destination="DZU-vE-jqR" kind="show" identifier="PictureTaken" id="t1K-gf-qCw"/>
+                        <segue destination="flO-Ue-eRM" kind="presentation" identifier="viewPhotoSegue" id="GJ7-43-GIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41.25" y="317.95774647887322"/>
+            <point key="canvasLocation" x="-114" y="432"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Jzl-5o-MQO">
+        <!--View Picture Table View Controller-->
+        <scene sceneID="tio-ed-SKO">
             <objects>
-                <viewController id="a4f-fQ-IYQ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Xl-qg-xrc">
+                <tableViewController id="flO-Ue-eRM" customClass="ViewPictureTableViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="2BE-p1-i4E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="ynr-qp-kfs" customClass="ViewPictureTableViewCell" customModule="RutgersSustainability" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynr-qp-kfs" id="WGY-h6-dxm">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-bz-UGn">
+                                            <rect key="frame" x="91" y="6" width="138" height="85"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cg-h0-uC0">
+                                            <rect key="frame" x="139" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGy-ln-E8Y">
+                                            <rect key="frame" x="139" y="70" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="kUT-bz-UGn" firstAttribute="centerY" secondItem="WGY-h6-dxm" secondAttribute="centerY" id="07l-5J-R2Y"/>
+                                        <constraint firstItem="kUT-bz-UGn" firstAttribute="centerX" secondItem="WGY-h6-dxm" secondAttribute="centerX" id="LKm-yf-1GE"/>
+                                        <constraint firstItem="6cg-h0-uC0" firstAttribute="top" secondItem="WGY-h6-dxm" secondAttribute="topMargin" id="Ow5-wb-E9r"/>
+                                        <constraint firstItem="kUT-bz-UGn" firstAttribute="leading" secondItem="WGY-h6-dxm" secondAttribute="leadingMargin" constant="83" id="Z50-cF-hh3"/>
+                                        <constraint firstItem="kUT-bz-UGn" firstAttribute="top" secondItem="WGY-h6-dxm" secondAttribute="topMargin" constant="-2" id="fOu-ZU-vNV"/>
+                                        <constraint firstItem="kUT-bz-UGn" firstAttribute="centerX" secondItem="6cg-h0-uC0" secondAttribute="centerX" id="fp5-yv-afH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateText" destination="6cg-h0-uC0" id="7D8-GJ-tqr"/>
+                                    <outlet property="tags" destination="IGy-ln-E8Y" id="ycy-jO-ffE"/>
+                                    <outlet property="trashPicView" destination="kUT-bz-UGn" id="xTk-nJ-JSp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="flO-Ue-eRM" id="LmB-EQ-pl3"/>
+                            <outlet property="delegate" destination="flO-Ue-eRM" id="yYi-ir-Phn"/>
+                        </connections>
                     </tableView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MfL-XI-a7S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JE9-8v-Vqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="815.49295774647885"/>
+            <point key="canvasLocation" x="922.5" y="684.50704225352115"/>
         </scene>
         <!--After Picture View Controller-->
         <scene sceneID="qcd-X3-nxK">
@@ -97,6 +142,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6S-he-7lf">
                                 <rect key="frame" x="116" y="294" width="88" height="30"/>
                                 <state key="normal" title="Send Picture"/>
+                                <connections>
+                                    <action selector="sendPictureButtonTapped:" destination="DZU-vE-jqR" eventType="touchUpInside" id="c4q-jQ-j1c"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHJ-Oo-IDs">
                                 <rect key="frame" x="136" y="328" width="48" height="30"/>
@@ -124,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="0uv-wr-HSa" id="pHQ-EQ-ihf"/>
+                        <outlet property="tagsTextField" destination="1Sl-35-xHh" id="HGJ-nb-Hqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bks-Ct-DqR" userLabel="First Responder" sceneMemberID="firstResponder"/>

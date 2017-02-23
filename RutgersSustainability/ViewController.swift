@@ -13,7 +13,9 @@ import AWSCognito
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var image : UIImage!
-
+    var filename : URL!
+    var keyName : String!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -46,22 +48,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func viewPhotoButtonClicked(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePicker.allowsEditing = true
-
-        }
+        self.performSegue(withIdentifier: "viewPhotoSegue", sender: nil)
+    
     }
 
-    @IBAction func segueButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "PictureTaken", sender: self)
-    }
+
    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject: AnyObject]!) {
         self.image = image
+        let currentDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+        let dateString = dateFormatter.string(from: currentDate as Date)
+        let fileBase = "JPEG_" + dateString + "_.jpg"
+        self.keyName = fileBase
+        let filename = getDocumentsDirectory().appendingPathComponent(fileBase)
+        let data = UIImageJPEGRepresentation(self.image, 50.0)
+        try? data?.write(to: filename)
         imageView.image = self.image
+        self.filename = filename
         self.dismiss(animated: true, completion: {() -> Void in
             self.performSegue(withIdentifier: "PictureTaken", sender: nil)
 
@@ -72,6 +77,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
        
     }
     
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
   
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,6 +91,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let afterPic = segue.destination as! AfterPictureViewController
             if (self.image != nil) {
                 afterPic.image = self.image!
+                afterPic.filename = self.filename!
+                afterPic.keyName = self.keyName!
             }
         }
     }

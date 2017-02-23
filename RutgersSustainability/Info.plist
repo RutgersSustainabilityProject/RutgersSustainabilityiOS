@@ -24,6 +24,8 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To pass location coordinates</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To take photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
