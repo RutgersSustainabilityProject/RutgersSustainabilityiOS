@@ -20,6 +20,14 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var tagsTextField: UITextField!
     
     let manager = CLLocationManager()
+    var latitude : Double!
+    var longitude : Double!
+    var location : CLLocation! {
+        didSet {
+            latitude = location.coordinate.latitude;
+            longitude = location.coordinate.longitude;
+        }
+    }
     var image: UIImage!
     var filename: URL!
     var keyName: String = ""
@@ -30,8 +38,26 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         imageView.image = self.image;
-        manager.delegate = self;1       // manager.desiredAccuracy
-       
+        manager.delegate = self;       // manager.desiredAccuracy
+        manager.desiredAccuracy = kCLLocationAccuracyBest;
+        checkCoreLocationPermission();
+    }
+    
+    func checkCoreLocationPermission(){
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            manager.startUpdatingLocation();
+        } else if CLLocationManager.authorizationStatus() == .notDetermined {
+            manager.requestWhenInUseAuthorization();
+        } else if CLLocationManager.authorizationStatus() == .restricted {
+            //put an alert
+            print("unauthorized to use location service")
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = (locations as! [CLLocation]).last;
+        manager.stopUpdatingLocation()
     }
     
     //override function get location
@@ -43,6 +69,11 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func sendPictureButtonTapped(_ sender: Any) {
         tags = tagsTextField.text!
+        manager.startUpdatingLocation();
+        latitude = location.coordinate.latitude;
+        longitude = location.coordinate.longitude;
+        print("\(latitude)")
+        print("\(longitude)")
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest?.body = self.filename
         uploadRequest?.key = self.keyName //ProcessInfo.processInfo.globallyUniqueString + ".jpg"
@@ -62,7 +93,7 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate {
             if task.result != nil {
                 let s3URL =  "http://rusustainability.s3.amazonaws.com/\(self.keyName)"
                 print("Uploaded to:\n\(s3URL)")
-                Networking.postTrash(userId: self.deviceID, picture: String(s3URL), latitude: 0.0, longitude: 0.0, epoch: 0, tags: self.tags, completionHandler: {
+                Networking.postTrash(userId: self.deviceID, picture: String(s3URL), latitude: self.latitude, longitude: self.longitude, epoch: 0, tags: self.tags, completionHandler: {
                     response, error in
                     
                     if (error != nil) {
