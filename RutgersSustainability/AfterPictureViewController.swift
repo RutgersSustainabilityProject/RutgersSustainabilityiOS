@@ -83,13 +83,12 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate {
         
         let transferManager = AWSS3TransferManager.default()
         
-        transferManager?.upload(uploadRequest).continue( { (task) -> AnyObject? in
+        transferManager.upload(uploadRequest!).continueWith(block: {task in
+            
             if let error = task.error {
                 print("Upload failed (\(error))")
             }
-            if let exception = task.exception {
-                print("Upload failed  (\(exception))")
-            }
+
             if task.result != nil {
                 let s3URL =  "http://rusustainability.s3.amazonaws.com/\(self.keyName)"
                 print("Uploaded to:\n\(s3URL)")

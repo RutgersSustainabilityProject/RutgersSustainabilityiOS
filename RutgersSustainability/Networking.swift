@@ -47,7 +47,7 @@ class Networking {
     }
 //class func getTrash(userId: String, completionHandler:@escaping (AuthenticationResponse?, NSError?) -> ()) authenticationresponse gives error
   class func getTrash(userId: String, completionHandler:@escaping (TrashResponse?, NSError?) -> ()) {
-        let getTrashUrl = Networking().url! + "/getTrashByUserId"
+        let getTrashUrl = Networking().url! + "/trash/getTrashByUserId"
     let parameters: Parameters = ["userId" : userId]
     Alamofire.request(getTrashUrl, parameters : parameters).responseObject { ( response: DataResponse<TrashResponse>) in
             switch response.result {

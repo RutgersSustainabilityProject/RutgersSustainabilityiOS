@@ -10,8 +10,8 @@ import Foundation
 import ObjectMapper
 
 class TrashResponse: Mappable{
-    var status : String? = "";
-    var message : String? = "";
+    var status : String?
+    var message : String?
     var trash : [Trash]?
 
     
@@ -29,8 +29,8 @@ class TrashResponse: Mappable{
 
 class Trash: Mappable{
     
-    var userId : String? = "";
-    var picture : String? = "";
+    var userId : String?
+    var picture : String?
     var latitude : Double?
     var longitude : Double?
     var epoch : UInt64?
