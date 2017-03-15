@@ -86,8 +86,6 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
         manager.startUpdatingLocation();
         latitude = location.coordinate.latitude;
         longitude = location.coordinate.longitude;
-        print("\(latitude)")
-        print("\(longitude)")
         let uploadRequest = AWSS3TransferManagerUploadRequest()
         uploadRequest?.body = self.filename
         uploadRequest?.key = self.keyName //ProcessInfo.processInfo.globallyUniqueString + ".jpg"

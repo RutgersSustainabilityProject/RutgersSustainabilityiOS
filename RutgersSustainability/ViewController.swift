@@ -12,20 +12,33 @@ import AWSCognito
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var deviceIDdisplaySwitch: UISwitch!
+    @IBOutlet weak var deviceIDLabel: UILabel!
+    
+    @IBAction func switchPressed(_ sender: Any) {
+        if deviceIDdisplaySwitch.isOn {
+            deviceIDLabel.text = deviceID
+        } else {
+            deviceIDLabel.text = "show device ID"
+        }
+        
+    }
+    
+    
     var image : UIImage!
     var filename : URL!
     var keyName : String!
     var epoch : UInt64!
+    var deviceID = UIDevice.current.identifierForVendor!.uuidString
     
     //Allow option for userID to be shown
     
-    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,7 +82,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let filename = getDocumentsDirectory().appendingPathComponent(fileBase)
         let data = UIImageJPEGRepresentation(self.image, 50.0)
         try? data?.write(to: filename)
-        imageView.image = self.image
         self.filename = filename
         self.dismiss(animated: true, completion: {() -> Void in
             self.performSegue(withIdentifier: "PictureTaken", sender: nil)
@@ -91,7 +103,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PictureTaken" {
-        print("segue completed")
+        //print("segue completed")
         let afterPic = segue.destination as! AfterPictureViewController
             if (self.image != nil) {
                 afterPic.image = self.image!

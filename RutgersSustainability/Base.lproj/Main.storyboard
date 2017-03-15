@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dvD-kZ-ACx">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,26 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="iiv-Tz-EUv">
+            <objects>
+                <navigationController id="dvD-kZ-ACx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gws-gV-wv3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fS0-uI-WPi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTU-ks-Y0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1052" y="431"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,46 +39,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOE-c2-yFk">
-                                <rect key="frame" x="117.5" y="516" width="85" height="30"/>
+                                <rect key="frame" x="118" y="447" width="85" height="30"/>
                                 <state key="normal" title="View Photos"/>
                                 <connections>
                                     <action selector="viewPhotoButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFw-1G-5yh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fy1-5t-pam">
-                                <rect key="frame" x="121.5" y="471" width="77" height="30"/>
+                                <rect key="frame" x="122" y="409" width="77" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="photoTaken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vtq-Wh-jjb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coe-rR-kzj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="463"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rutgers Sustainability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uo-u6-54d">
+                                <rect key="frame" x="45" y="112" width="230" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.79730945825576782" green="0.02512202225625515" blue="0.17623576521873474" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Gpt-8S-0yR">
+                                <rect key="frame" x="136" y="485" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="zov-nL-i8Z"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="show device ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifa-mV-E4f">
+                                <rect key="frame" x="16" y="524" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0ZK-XD-Zho"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aOE-c2-yFk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="247" id="8i3-lT-Qu5"/>
+                            <constraint firstItem="4Uo-u6-54d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-155.5" id="3G7-24-xXC"/>
+                            <constraint firstItem="aOE-c2-yFk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="178" id="8i3-lT-Qu5"/>
                             <constraint firstItem="Fy1-5t-pam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cj3-sL-C6k"/>
+                            <constraint firstItem="4Uo-u6-54d" firstAttribute="centerX" secondItem="Fy1-5t-pam" secondAttribute="centerX" id="JgM-Lg-fGH"/>
+                            <constraint firstItem="4Uo-u6-54d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="MFa-hi-SnR"/>
                             <constraint firstItem="aOE-c2-yFk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ONp-K9-OrC"/>
-                            <constraint firstItem="Fy1-5t-pam" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="202" id="trZ-sY-c5k"/>
+                            <constraint firstItem="Ifa-mV-E4f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SLE-gr-uVR"/>
+                            <constraint firstItem="Ifa-mV-E4f" firstAttribute="top" secondItem="Gpt-8S-0yR" secondAttribute="bottom" constant="8" symbolic="YES" id="WQz-76-jJc"/>
+                            <constraint firstItem="Gpt-8S-0yR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zds-IL-avf"/>
+                            <constraint firstItem="Gpt-8S-0yR" firstAttribute="top" secondItem="aOE-c2-yFk" secondAttribute="bottom" constant="8" symbolic="YES" id="c6m-mP-D6U"/>
+                            <constraint firstItem="Fy1-5t-pam" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="140" id="trZ-sY-c5k"/>
+                            <constraint firstItem="4Uo-u6-54d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="v2R-Sc-hLj"/>
+                            <constraint firstItem="Ifa-mV-E4f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x41-Xi-5Qq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HPt-wZ-7Zg"/>
                     <connections>
-                        <outlet property="imageView" destination="coe-rR-kzj" id="cTL-FD-qdz"/>
+                        <outlet property="deviceIDLabel" destination="Ifa-mV-E4f" id="zbG-3Z-DUl"/>
+                        <outlet property="deviceIDdisplaySwitch" destination="Gpt-8S-0yR" id="msa-i1-8EG"/>
                         <segue destination="DZU-vE-jqR" kind="show" identifier="PictureTaken" id="t1K-gf-qCw"/>
-                        <segue destination="flO-Ue-eRM" kind="presentation" identifier="viewPhotoSegue" id="GJ7-43-GIb"/>
+                        <segue destination="yLg-cD-ioL" kind="show" identifier="viewPhotoSegue" id="GJ7-43-GIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-114" y="432"/>
+            <point key="canvasLocation" x="-114.375" y="430.98591549295776"/>
         </scene>
-        <!--View Picture Table View Controller-->
+        <!--View Pictures-->
         <scene sceneID="tio-ed-SKO">
             <objects>
-                <tableViewController id="flO-Ue-eRM" customClass="ViewPictureTableViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="View Pictures" id="flO-Ue-eRM" customClass="ViewPictureTableViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="2BE-p1-i4E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,15 +151,27 @@
                             <outlet property="delegate" destination="flO-Ue-eRM" id="yYi-ir-Phn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="View Pictures" id="xNK-w2-S7s">
+                        <barButtonItem key="leftBarButtonItem" id="tKo-ce-DNt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TTf-er-vad">
+                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Pfg-Is-RWs"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JE9-8v-Vqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922.5" y="684.50704225352115"/>
+            <point key="canvasLocation" x="1920" y="684.50704225352115"/>
         </scene>
-        <!--After Picture View Controller-->
+        <!--Send Picture-->
         <scene sceneID="qcd-X3-nxK">
             <objects>
-                <viewController id="DZU-vE-jqR" customClass="AfterPictureViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Send Picture" id="DZU-vE-jqR" customClass="AfterPictureViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bMw-32-bRa"/>
                         <viewControllerLayoutGuide type="bottom" id="VWk-r0-8yd"/>
@@ -125,10 +181,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uv-wr-HSa">
-                                <rect key="frame" x="72" y="61" width="176" height="162"/>
+                                <rect key="frame" x="72" y="105" width="176" height="74"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags: (ex: bottle, wrapper, food)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-35-xHh">
-                                <rect key="frame" x="46" y="245" width="227" height="30"/>
+                                <rect key="frame" x="46" y="201" width="227" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -173,5 +229,26 @@
             </objects>
             <point key="canvasLocation" x="933.75" y="-113.02816901408451"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wr1-VE-Fhn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yLg-cD-ioL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BlW-i4-RSk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="flO-Ue-eRM" kind="relationship" relationship="rootViewController" id="Zh8-ak-bd4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63Y-wy-81s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922.5" y="684.50704225352115"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Pfg-Is-RWs"/>
+    </inferredMetricsTieBreakers>
 </document>

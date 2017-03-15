@@ -16,8 +16,7 @@ class ViewPictureTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(deviceID);
-        Networking.getTrash(userId: deviceID, completionHandler: {
+            Networking.getTrash(userId: deviceID, completionHandler: {
             response, error in
             
             if (error == nil){
