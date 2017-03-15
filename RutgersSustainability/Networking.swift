@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 
+
 class Networking {
     
     var url: String? {

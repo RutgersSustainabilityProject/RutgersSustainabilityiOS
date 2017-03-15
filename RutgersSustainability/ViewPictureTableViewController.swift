@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewPictureTableViewController: UITableViewController {
     
     var deviceID = UIDevice.current.identifierForVendor!.uuidString
     var trashImages = [Trash]();
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,9 @@ class ViewPictureTableViewController: UITableViewController {
         let trash = trashImages[indexPath.row]
         cell.dateText.text = "date"
         cell.tags.text = trash.tags!
+        let url = URL(string: trash.picture!)!
+        cell.trashPicView.kf.setImage(with: url)
+        
         
         return cell
     }

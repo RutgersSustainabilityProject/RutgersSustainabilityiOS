@@ -26,4 +26,5 @@ target :'RutgersSustainability' do
     pod 'AWSSQS'
     pod 'Alamofire', '~> 4.0'
     pod 'AlamofireObjectMapper', '~> 4.0'
+    pod 'Kingfisher', '~> 3.0'
 end

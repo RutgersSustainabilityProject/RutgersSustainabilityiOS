@@ -15,6 +15,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var image : UIImage!
     var filename : URL!
     var keyName : String!
+    var epoch : UInt64!
+    
+    //Allow option for userID to be shown
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -60,6 +63,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
         let dateString = dateFormatter.string(from: currentDate as Date)
+        epoch = UInt64(currentDate.timeIntervalSince1970 * 1000.0)
         let fileBase = "JPEG_" + dateString + "_.jpg"
         self.keyName = fileBase
         let filename = getDocumentsDirectory().appendingPathComponent(fileBase)
@@ -93,6 +97,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 afterPic.image = self.image!
                 afterPic.filename = self.filename!
                 afterPic.keyName = self.keyName!
+                afterPic.epoch = self.epoch!
             }
         }
     }
