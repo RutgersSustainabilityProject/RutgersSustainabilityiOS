@@ -85,8 +85,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.filename = filename
         self.dismiss(animated: true, completion: {() -> Void in
             self.performSegue(withIdentifier: "PictureTaken", sender: nil)
-
-            
             
         })
         

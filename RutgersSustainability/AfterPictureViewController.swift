@@ -19,6 +19,8 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
     
     @IBOutlet weak var tagsTextField: UITextField!
     
+    let indicator : UIActivityIndicatorView = UIActivityIndicatorView  (activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
     let manager = CLLocationManager()
     var latitude : Double!
     var longitude : Double!
@@ -70,6 +72,14 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
     
     @IBAction func sendPictureButtonTapped(_ sender: Any) {
         tagsTextField.resignFirstResponder()
+        //delete below text
+        indicator.color = UIColor.magenta
+        indicator.frame = CGRect(x:0,y:0,width:10.0,height:10.0)
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        indicator.bringSubview(toFront: self.view)
+        indicator.startAnimating()
+        //delete above text
         let untrimmedTags = tagsTextField.text!
         let tagsArr = untrimmedTags.components(separatedBy: " ")
         for i in (0..<tagsArr.count)
@@ -98,6 +108,17 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
         transferManager?.upload(uploadRequest!).continue( {task in
             
             if let error = task.error {
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
+                let alertController3 = UIAlertController(title: "Error", message: "There was an error while uploading image to server", preferredStyle: UIAlertControllerStyle.alert)
+                
+                let okAction3 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                {
+                    (result : UIAlertAction) -> Void in
+                    print("You pressed OK")
+                }
+                alertController3.addAction(okAction3)
+                self.present(alertController3, animated: true, completion: nil)
                 print("Upload failed (\(error))")
             }
             
@@ -108,18 +129,43 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
                     response, error in
                     
                     if (error != nil) {
+                        self.indicator.stopAnimating()
+                        self.indicator.hidesWhenStopped = true
+                        let alertController2 = UIAlertController(title: "Error", message: "There was an error while uploading image to server", preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let okAction2 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                        {
+                            (result : UIAlertAction) -> Void in
+                             print("You pressed OK")
+                        }
+                        alertController2.addAction(okAction2)
+                        self.present(alertController2, animated: true, completion: nil)
                         print("error")
                     }
                     else {
+                        self.indicator.stopAnimating()
+                        self.indicator.hidesWhenStopped = true
                         print("successfully uploaded to server")
+                        let alertController = UIAlertController(title: "Trash Image Upload", message: "Image successfully uploaded to server", preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                        {
+                            (result : UIAlertAction) -> Void in
+                             //print("You pressed OK")
+                             self.performSegue(withIdentifier: "returnHomeSegue", sender: nil)
+                            
+                        }
+                        alertController.addAction(okAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        
                     }
-                    //add alert that says if successfully upload to server^ above
-                    //ask shreyas if this is necessary to keep^
-                    //so the app user knows if upload worked or not
+                   
                 }
                 )
             }
             else {
+                self.indicator.stopAnimating()
+                self.indicator.hidesWhenStopped = true
                 print("Unexpected empty result.")
             }
             //add segue back to main view controller

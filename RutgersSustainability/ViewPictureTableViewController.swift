@@ -26,7 +26,7 @@ class ViewPictureTableViewController: UITableViewController {
                 print("error: \(error?.localizedDescription)")
             }
             
-        })
+            })
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,10 +56,15 @@ class ViewPictureTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! ViewPictureTableViewCell
 
         let trash = trashImages[indexPath.row]
-        cell.dateText.text = "date"
+        let dateFromEpoch = NSDate(timeIntervalSince1970: ((Double)(trash.epoch!))/1000.0)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy HH:mm"
+        let dateString = dateFormatter.string(from: dateFromEpoch as Date)
+        cell.dateText.text = dateString
         cell.tags.text = trash.tags!
         let url = URL(string: trash.picture!)!
         cell.trashPicView.kf.setImage(with: url)
+        
         
         
         return cell
