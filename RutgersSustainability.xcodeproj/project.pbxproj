@@ -16,6 +16,7 @@
 		A822A0301E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822A02F1E26A0A200CE23B4 /* RutgersSustainabilityUITests.swift */; };
 		A83573B31E7EE37000053898 /* RecordNoiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83573B21E7EE37000053898 /* RecordNoiseViewController.swift */; };
 		A84E86591E2AD8C7008476E4 /* AfterPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */; };
+		A868EA201E7F270300EB1E8D /* micICON2.png in Resources */ = {isa = PBXBuildFile; fileRef = A868EA1F1E7F270300EB1E8D /* micICON2.png */; };
 		A88942031E56A920008DD452 /* ResponseObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88942021E56A920008DD452 /* ResponseObjects.swift */; };
 		A88942051E56A9D9008DD452 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88942041E56A9D9008DD452 /* CoreLocation.framework */; };
 		A8B868281E382BB6002F8176 /* ViewPictureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B868271E382BB6002F8176 /* ViewPictureTableViewController.swift */; };
@@ -60,6 +61,7 @@
 		A822A0311E26A0A200CE23B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A83573B21E7EE37000053898 /* RecordNoiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordNoiseViewController.swift; path = ../RecordNoiseViewController.swift; sourceTree = "<group>"; };
 		A84E86581E2AD8C7008476E4 /* AfterPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterPictureViewController.swift; sourceTree = "<group>"; };
+		A868EA1F1E7F270300EB1E8D /* micICON2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = micICON2.png; path = ../../../../Desktop/micICON2.png; sourceTree = "<group>"; };
 		A88942021E56A920008DD452 /* ResponseObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseObjects.swift; path = ../ResponseObjects.swift; sourceTree = "<group>"; };
 		A88942041E56A9D9008DD452 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A8B868271E382BB6002F8176 /* ViewPictureTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPictureTableViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		A822A0031E26A0A100CE23B4 = {
 			isa = PBXGroup;
 			children = (
+				A868EA1E1E7F26F300EB1E8D /* images */,
 				A822A00E1E26A0A200CE23B4 /* RutgersSustainability */,
 				A822A0231E26A0A200CE23B4 /* RutgersSustainabilityTests */,
 				A822A02E1E26A0A200CE23B4 /* RutgersSustainabilityUITests */,
@@ -151,6 +154,14 @@
 				A822A0311E26A0A200CE23B4 /* Info.plist */,
 			);
 			path = RutgersSustainabilityUITests;
+			sourceTree = "<group>";
+		};
+		A868EA1E1E7F26F300EB1E8D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A868EA1F1E7F270300EB1E8D /* micICON2.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		A9C65CD79A61615BC1585243 /* Frameworks */ = {
@@ -285,6 +296,7 @@
 				A822A01A1E26A0A200CE23B4 /* LaunchScreen.storyboard in Resources */,
 				A822A0171E26A0A200CE23B4 /* Assets.xcassets in Resources */,
 				A822A0151E26A0A200CE23B4 /* Main.storyboard in Resources */,
+				A868EA201E7F270300EB1E8D /* micICON2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

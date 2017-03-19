@@ -33,6 +33,15 @@ class RecordNoiseViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     
     func setUpRecorder(){
         
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try audioSession.setCategory(
+                AVAudioSessionCategoryPlayAndRecord)
+        } catch let error as NSError {
+            print("audioSession error: \(error.localizedDescription)")
+        }
+        
         let recorderSettings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
@@ -44,26 +53,10 @@ class RecordNoiseViewController: UIViewController, AVAudioRecorderDelegate, AVAu
             soundRecorder = try AVAudioRecorder(url: getFileURL(), settings: recorderSettings)
             soundRecorder.delegate = self
           
-            // soundRecorder.record()
-            //recordButton.setTitle("Tap to Stop", for: .normal)
         } catch {
-           // finishRecording(success: false)
+
             print("Error while recording")
         }
-     
-        
-        /*   var error : NSError?
-        soundRecorder = try AVAudioRecorder(URL : getFileURL(), settings : recorderSettings as [NSObject : AnyObject], error: &error)
-        
-        if error != nil{
-            print("recorder set up error")
-        }
-        
-        else {
-            soundRecorder.delegate = self
-            soundRecorder.prepareToRecord()
-        }
-         */
         
     }
     
@@ -126,7 +119,7 @@ class RecordNoiseViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished playing")
+        //print("finished playing")
         recordButton.isEnabled = true
         playButton.setTitle("Play", for: .normal)
     }

@@ -275,13 +275,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-0Y-OUc">
-                                <rect key="frame" x="136" y="269" width="49" height="30"/>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="record:" destination="334-vR-WvH" eventType="touchUpInside" id="XhU-yv-dgd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4W-F3-Tj8">
                                 <rect key="frame" x="145" y="463" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
@@ -289,13 +282,29 @@
                                     <action selector="playSound:" destination="334-vR-WvH" eventType="touchUpInside" id="hCo-LC-REG"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micICON2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wbx-pN-A82">
+                                <rect key="frame" x="46" y="145" width="228" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="218" id="AKS-D0-chh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-0Y-OUc">
+                                <rect key="frame" x="136" y="425" width="49" height="30"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="record:" destination="334-vR-WvH" eventType="touchUpInside" id="XhU-yv-dgd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87666560910000002" green="0.77344278499999997" blue="0.66995769009999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="v4W-F3-Tj8" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="BaN-YA-P9r"/>
-                            <constraint firstItem="z3Y-9T-S8l" firstAttribute="top" secondItem="v4W-F3-Tj8" secondAttribute="bottom" constant="75" id="DlU-bk-Kge"/>
-                            <constraint firstItem="PUF-0Y-OUc" firstAttribute="centerY" secondItem="dUK-gN-9zv" secondAttribute="centerY" id="IrN-oS-Trp"/>
-                            <constraint firstItem="PUF-0Y-OUc" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="v4h-nF-ltJ"/>
+                            <constraint firstItem="Wbx-pN-A82" firstAttribute="top" secondItem="dxl-yD-H6u" secondAttribute="bottom" constant="81" id="15g-3c-kc9"/>
+                            <constraint firstItem="Wbx-pN-A82" firstAttribute="centerX" secondItem="PUF-0Y-OUc" secondAttribute="centerX" id="WhG-7Y-Lpw"/>
+                            <constraint firstItem="v4W-F3-Tj8" firstAttribute="top" secondItem="PUF-0Y-OUc" secondAttribute="bottom" constant="8" id="XEm-0S-018"/>
+                            <constraint firstItem="Wbx-pN-A82" firstAttribute="leading" secondItem="dUK-gN-9zv" secondAttribute="leadingMargin" constant="30" id="hlN-H8-reP"/>
+                            <constraint firstItem="Wbx-pN-A82" firstAttribute="centerX" secondItem="v4W-F3-Tj8" secondAttribute="centerX" id="lil-bF-asa"/>
+                            <constraint firstItem="Wbx-pN-A82" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="loh-hE-fQF"/>
+                            <constraint firstItem="PUF-0Y-OUc" firstAttribute="top" secondItem="Wbx-pN-A82" secondAttribute="bottom" constant="62" id="qD8-Cy-J5M"/>
                         </constraints>
                     </view>
                     <connections>
@@ -305,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFq-ZB-imj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="1189"/>
+            <point key="canvasLocation" x="922.5" y="1188.3802816901409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wr1-VE-Fhn">
@@ -326,6 +335,9 @@
             <point key="canvasLocation" x="923" y="431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="micICON2.png" width="1024" height="1024"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fS0-uI-WPi"/>
     </inferredMetricsTieBreakers>
