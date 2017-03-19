@@ -35,6 +35,8 @@
 	<string>To take photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To show photo</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To record sound</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

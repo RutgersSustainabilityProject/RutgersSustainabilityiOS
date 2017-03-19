@@ -73,11 +73,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CLP-qL-qdl">
+                                <rect key="frame" x="114" y="371" width="92" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3ep-ry-0ht">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y66-Hi-XSD">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVI-8Q-N0d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                                        <state key="normal" title="Record Noise"/>
+                                                        <connections>
+                                                            <segue destination="334-vR-WvH" kind="show" identifier="RecordNoiseSegue" id="Yy0-Jo-NgN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.87666560913705582" green="0.77344278496841923" blue="0.6699576900747789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4Uo-u6-54d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-155.5" id="3G7-24-xXC"/>
                             <constraint firstItem="aOE-c2-yFk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="178" id="8i3-lT-Qu5"/>
+                            <constraint firstItem="Fy1-5t-pam" firstAttribute="top" secondItem="CLP-qL-qdl" secondAttribute="bottom" constant="8" id="9wp-q1-NVp"/>
                             <constraint firstItem="Fy1-5t-pam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cj3-sL-C6k"/>
                             <constraint firstItem="4Uo-u6-54d" firstAttribute="centerX" secondItem="Fy1-5t-pam" secondAttribute="centerX" id="JgM-Lg-fGH"/>
                             <constraint firstItem="4Uo-u6-54d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="29" id="MFa-hi-SnR"/>
@@ -86,6 +109,7 @@
                             <constraint firstItem="Ifa-mV-E4f" firstAttribute="top" secondItem="Gpt-8S-0yR" secondAttribute="bottom" constant="8" symbolic="YES" id="WQz-76-jJc"/>
                             <constraint firstItem="Gpt-8S-0yR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zds-IL-avf"/>
                             <constraint firstItem="Gpt-8S-0yR" firstAttribute="top" secondItem="aOE-c2-yFk" secondAttribute="bottom" constant="8" symbolic="YES" id="c6m-mP-D6U"/>
+                            <constraint firstItem="CLP-qL-qdl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mkj-AV-IDK"/>
                             <constraint firstItem="Fy1-5t-pam" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="140" id="trZ-sY-c5k"/>
                             <constraint firstItem="4Uo-u6-54d" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="v2R-Sc-hLj"/>
                             <constraint firstItem="Ifa-mV-E4f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x41-Xi-5Qq"/>
@@ -116,7 +140,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="187"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynr-qp-kfs" id="WGY-h6-dxm">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="186.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kUT-bz-UGn">
@@ -175,7 +199,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JE9-8v-Vqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="684.50704225352115"/>
+            <point key="canvasLocation" x="1935" y="431"/>
         </scene>
         <!--Send Picture-->
         <scene sceneID="qcd-X3-nxK">
@@ -190,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uv-wr-HSa">
-                                <rect key="frame" x="16" y="20" width="288" height="241"/>
+                                <rect key="frame" x="16" y="64" width="288" height="197"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags: (ex: bottle, wrapper, food)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sl-35-xHh">
                                 <rect key="frame" x="47" y="278" width="227" height="30"/>
@@ -237,7 +261,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bks-Ct-DqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.75" y="-113.02816901408451"/>
+            <point key="canvasLocation" x="923" y="-357"/>
+        </scene>
+        <!--Record Noise-->
+        <scene sceneID="DNp-p0-B2q">
+            <objects>
+                <viewController title="Record Noise" id="334-vR-WvH" customClass="RecordNoiseViewController" customModule="RutgersSustainability" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dxl-yD-H6u"/>
+                        <viewControllerLayoutGuide type="bottom" id="z3Y-9T-S8l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dUK-gN-9zv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-0Y-OUc">
+                                <rect key="frame" x="136" y="269" width="49" height="30"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="record:" destination="334-vR-WvH" eventType="touchUpInside" id="XhU-yv-dgd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4W-F3-Tj8">
+                                <rect key="frame" x="145" y="463" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playSound:" destination="334-vR-WvH" eventType="touchUpInside" id="hCo-LC-REG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87666560910000002" green="0.77344278499999997" blue="0.66995769009999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v4W-F3-Tj8" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="BaN-YA-P9r"/>
+                            <constraint firstItem="z3Y-9T-S8l" firstAttribute="top" secondItem="v4W-F3-Tj8" secondAttribute="bottom" constant="75" id="DlU-bk-Kge"/>
+                            <constraint firstItem="PUF-0Y-OUc" firstAttribute="centerY" secondItem="dUK-gN-9zv" secondAttribute="centerY" id="IrN-oS-Trp"/>
+                            <constraint firstItem="PUF-0Y-OUc" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="v4h-nF-ltJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="v4W-F3-Tj8" id="Dsk-1R-MHj"/>
+                        <outlet property="recordButton" destination="PUF-0Y-OUc" id="BT2-Y8-7dz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFq-ZB-imj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923" y="1189"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wr1-VE-Fhn">
@@ -255,10 +323,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63Y-wy-81s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="922.5" y="684.50704225352115"/>
+            <point key="canvasLocation" x="923" y="431"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CTv-Uw-dwj"/>
+        <segue reference="fS0-uI-WPi"/>
     </inferredMetricsTieBreakers>
 </document>
