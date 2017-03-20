@@ -53,4 +53,54 @@ class Trash: Mappable{
         __v <- map["__v"]
 
     }
+    
+}
+
+class NoiseResponse: Mappable{
+    var status : String?
+    var message : String?
+    var noise : [Noise]?
+    
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        status <- map["status"]
+        message <- map["message"]
+        noise <- map["noise"]
+    }
+    
+}
+
+class Noise: Mappable{
+    
+    var userId : String?
+    var audio : String?
+    var latitude : Double?
+    var longitude : Double?
+    var decibels : Double?
+    var epoch : UInt64?
+    var tags : String?
+    var _id : String?
+    var __v : Int?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map){
+        userId <- map["userId"]
+        audio <- map["audio"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
+        decibels <- map["decibels"]
+        epoch <- map["epoch"]
+        tags <- map["tags"]
+        _id <- map["_id"]
+        __v <- map["__v"]
+        
+    }
+    
 }

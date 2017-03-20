@@ -19,7 +19,7 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
     
     @IBOutlet weak var tagsTextField: UITextField!
     
-    let indicator : UIActivityIndicatorView = UIActivityIndicatorView  (activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    let indicator : UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
 
     let manager = CLLocationManager()
     var latitude : Double!

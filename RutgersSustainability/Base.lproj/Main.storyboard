@@ -276,20 +276,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4W-F3-Tj8">
-                                <rect key="frame" x="145" y="463" width="30" height="30"/>
+                                <rect key="frame" x="145" y="419" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playSound:" destination="334-vR-WvH" eventType="touchUpInside" id="hCo-LC-REG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micICON2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wbx-pN-A82">
-                                <rect key="frame" x="46" y="145" width="228" height="218"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micICON2" translatesAutoresizingMaskIntoConstraints="NO" id="Wbx-pN-A82">
+                                <rect key="frame" x="46" y="101" width="228" height="218"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="218" id="AKS-D0-chh"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45K-eh-fGw">
+                                <rect key="frame" x="106" y="457" width="109" height="30"/>
+                                <state key="normal" title="Send Recording"/>
+                                <connections>
+                                    <action selector="sendRecording:" destination="334-vR-WvH" eventType="touchUpInside" id="Nr4-3U-iaD"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tags: (ex: construction, protest)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kL-pS-DYh">
+                                <rect key="frame" x="46" y="343" width="228" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUF-0Y-OUc">
-                                <rect key="frame" x="136" y="425" width="49" height="30"/>
+                                <rect key="frame" x="136" y="381" width="49" height="30"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="record:" destination="334-vR-WvH" eventType="touchUpInside" id="XhU-yv-dgd"/>
@@ -299,8 +312,14 @@
                         <color key="backgroundColor" red="0.87666560910000002" green="0.77344278499999997" blue="0.66995769009999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wbx-pN-A82" firstAttribute="top" secondItem="dxl-yD-H6u" secondAttribute="bottom" constant="81" id="15g-3c-kc9"/>
+                            <constraint firstItem="PUF-0Y-OUc" firstAttribute="top" secondItem="7kL-pS-DYh" secondAttribute="bottom" constant="8" id="5wV-7S-Zer"/>
+                            <constraint firstItem="7kL-pS-DYh" firstAttribute="top" secondItem="Wbx-pN-A82" secondAttribute="bottom" constant="24" id="D6F-sb-RUG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7kL-pS-DYh" secondAttribute="trailing" constant="30" id="HAy-7P-vIz"/>
+                            <constraint firstItem="7kL-pS-DYh" firstAttribute="leading" secondItem="dUK-gN-9zv" secondAttribute="leadingMargin" constant="30" id="W9b-DC-gnI"/>
                             <constraint firstItem="Wbx-pN-A82" firstAttribute="centerX" secondItem="PUF-0Y-OUc" secondAttribute="centerX" id="WhG-7Y-Lpw"/>
                             <constraint firstItem="v4W-F3-Tj8" firstAttribute="top" secondItem="PUF-0Y-OUc" secondAttribute="bottom" constant="8" id="XEm-0S-018"/>
+                            <constraint firstItem="45K-eh-fGw" firstAttribute="top" secondItem="v4W-F3-Tj8" secondAttribute="bottom" constant="8" id="aEv-vL-lrk"/>
+                            <constraint firstItem="45K-eh-fGw" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="etd-dh-uO0"/>
                             <constraint firstItem="Wbx-pN-A82" firstAttribute="leading" secondItem="dUK-gN-9zv" secondAttribute="leadingMargin" constant="30" id="hlN-H8-reP"/>
                             <constraint firstItem="Wbx-pN-A82" firstAttribute="centerX" secondItem="v4W-F3-Tj8" secondAttribute="centerX" id="lil-bF-asa"/>
                             <constraint firstItem="Wbx-pN-A82" firstAttribute="centerX" secondItem="dUK-gN-9zv" secondAttribute="centerX" id="loh-hE-fQF"/>
@@ -310,6 +329,8 @@
                     <connections>
                         <outlet property="playButton" destination="v4W-F3-Tj8" id="Dsk-1R-MHj"/>
                         <outlet property="recordButton" destination="PUF-0Y-OUc" id="BT2-Y8-7dz"/>
+                        <outlet property="sendRecordingButton" destination="45K-eh-fGw" id="uLK-u2-pRi"/>
+                        <outlet property="tagsTextField" destination="7kL-pS-DYh" id="M87-LW-DXk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFq-ZB-imj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,9 +357,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="micICON2.png" width="1024" height="1024"/>
+        <image name="micICON2" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fS0-uI-WPi"/>
+        <segue reference="CTv-Uw-dwj"/>
     </inferredMetricsTieBreakers>
 </document>
