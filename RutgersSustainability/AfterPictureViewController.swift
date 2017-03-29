@@ -42,7 +42,7 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
         // Do any additional setup after loading the view.
         tagsTextField.delegate = self
         imageView.image = self.image;
-        manager.delegate = self;       // manager.desiredAccuracy
+        manager.delegate = self;       
         manager.desiredAccuracy = kCLLocationAccuracyBest;
         checkCoreLocationPermission();
     }
@@ -72,14 +72,15 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
     
     @IBAction func sendPictureButtonTapped(_ sender: Any) {
         tagsTextField.resignFirstResponder()
-        //delete below text
+        
+        //Sets up indicator for loading sign while picture is being uploaded
         indicator.color = UIColor.magenta
         indicator.frame = CGRect(x:0,y:0,width:10.0,height:10.0)
         indicator.center = self.view.center
         self.view.addSubview(indicator)
         indicator.bringSubview(toFront: self.view)
         indicator.startAnimating()
-        //delete above text
+        
         let untrimmedTags = tagsTextField.text!
         let tagsArr = untrimmedTags.components(separatedBy: " ")
         for i in (0..<tagsArr.count)
@@ -100,7 +101,7 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
         uploadRequest?.body = self.filename
         uploadRequest?.key = self.keyName //ProcessInfo.processInfo.globallyUniqueString + ".jpg"
         uploadRequest?.bucket = "rusustainability"
-        uploadRequest?.contentType = "image/jpeg"
+        uploadRequest?.contentType = "image/jpeg" //For Noise, video/3gpp
         uploadRequest?.acl = .publicRead
         
         let transferManager = AWSS3TransferManager.default()
@@ -110,16 +111,20 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
             if let error = task.error {
                 self.indicator.stopAnimating()
                 self.indicator.hidesWhenStopped = true
-                let alertController3 = UIAlertController(title: "Error", message: "There was an error while uploading image to server", preferredStyle: UIAlertControllerStyle.alert)
                 
-                let okAction3 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                print("Upload failed (\(error))")
+                
+                //sends alert to user that lets them know uploading failed
+                let alertController1 = UIAlertController(title: "Error", message: "There was an error while uploading image to server", preferredStyle: UIAlertControllerStyle.alert)
+                
+                let okAction1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
                 {
                     (result : UIAlertAction) -> Void in
                     print("You pressed OK")
                 }
-                alertController3.addAction(okAction3)
-                self.present(alertController3, animated: true, completion: nil)
-                print("Upload failed (\(error))")
+                alertController1.addAction(okAction1)
+                self.present(alertController1, animated: true, completion: nil)
+              
             }
             
             if task.result != nil {
@@ -131,6 +136,7 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
                     if (error != nil) {
                         self.indicator.stopAnimating()
                         self.indicator.hidesWhenStopped = true
+                        print("error")
                         let alertController2 = UIAlertController(title: "Error", message: "There was an error while uploading image to server", preferredStyle: UIAlertControllerStyle.alert)
                         
                         let okAction2 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
@@ -140,23 +146,25 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
                         }
                         alertController2.addAction(okAction2)
                         self.present(alertController2, animated: true, completion: nil)
-                        print("error")
+                        
                     }
                     else {
                         self.indicator.stopAnimating()
                         self.indicator.hidesWhenStopped = true
+                       
                         print("successfully uploaded to server")
-                        let alertController = UIAlertController(title: "Trash Image Upload", message: "Image successfully uploaded to server", preferredStyle: UIAlertControllerStyle.alert)
                         
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+                        let alertController3 = UIAlertController(title: "Trash Image Upload", message: "Image successfully uploaded to server", preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let okAction3 = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
                         {
                             (result : UIAlertAction) -> Void in
                              //print("You pressed OK")
                              self.performSegue(withIdentifier: "returnHomeSegue", sender: nil)
                             
                         }
-                        alertController.addAction(okAction)
-                        self.present(alertController, animated: true, completion: nil)
+                        alertController3.addAction(okAction3)
+                        self.present(alertController3, animated: true, completion: nil)
                         
                     }
                    
@@ -168,7 +176,7 @@ class AfterPictureViewController: UIViewController, CLLocationManagerDelegate, U
                 self.indicator.hidesWhenStopped = true
                 print("Unexpected empty result.")
             }
-            //add segue back to main view controller
+           
             return nil
         })
     }

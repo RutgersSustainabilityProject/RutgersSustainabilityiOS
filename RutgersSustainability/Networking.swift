@@ -46,6 +46,8 @@ class Networking {
                 }
         })
     }
+    
+    
 //class func getTrash(userId: String, completionHandler:@escaping (AuthenticationResponse?, NSError?) -> ()) authenticationresponse gives error
   class func getTrash(userId: String, completionHandler:@escaping (TrashResponse?, NSError?) -> ()) {
         let getTrashUrl = Networking().url! + "/trash/getTrashByUserId"
@@ -60,7 +62,36 @@ class Networking {
         }
     }
 
- 
+    class func postNoise(userId : String, audio : String, latitude : Double, longitude :  Double, decibels : Double, epoch : UInt64, tags : String, completionHandler : @escaping (NoiseResponse?, NSError?) -> ()) {
+        let postNoiseURL = Networking().url! + "/noise/postNoise"
+        Alamofire.upload(multipartFormData: {multipartFormData in
+            multipartFormData.append(userId.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "userId")
+            multipartFormData.append(audio.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "audioUrl")
+            multipartFormData.append(String(latitude).data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "latitude")
+            multipartFormData.append(String(longitude).data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "longitude")
+            multipartFormData.append(String(decibels).data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "decibels")
+            multipartFormData.append(String(epoch).data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "epoch")
+            multipartFormData.append(tags.data(using: String.Encoding.utf8, allowLossyConversion: false)!, withName : "tags")
+            
+        }
+            , to: postNoiseURL, encodingCompletion:
+            { encodingResult in
+                switch encodingResult {
+                case.success(let upload, _, _):
+                    upload.responseObject {
+                        (response: DataResponse<NoiseResponse>) in
+                        switch response.result {
+                        case .success(let value):
+                            completionHandler(value as NoiseResponse, nil)
+                        case .failure(let error):
+                            completionHandler(nil, error as NSError?)
+                        }
+                    }
+                case .failure(let encodingError):
+                    completionHandler(nil, encodingError as NSError?)
+                }
+        })
+    }
     
     
 }

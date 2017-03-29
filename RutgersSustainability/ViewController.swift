@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import AWSS3
-import AWSCognito
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -97,11 +95,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return documentsDirectory
     }
     
-  
+    
+    
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PictureTaken" {
-        //print("segue completed")
         let afterPic = segue.destination as! AfterPictureViewController
             if (self.image != nil) {
                 afterPic.image = self.image!
@@ -110,7 +108,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 afterPic.epoch = self.epoch!
             }
         }
+    
     }
+    
     
 }
 
